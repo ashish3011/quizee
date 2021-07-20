@@ -42,7 +42,7 @@ mongoose
   app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
-
+ 
 app.listen(port,()=>console.log(`server is running at port ${port}`));
 
 

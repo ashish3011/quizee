@@ -167,7 +167,7 @@ exports.addStudent = (req, res) => {
                  <a 
                  target="_blank"
                  style="background-color: #2d3e4f;color:#fff; text-decoration: none;  padding:15px 35px;border-radius:100px;font-size:30px;font-weight:700 "
-                 href="${process.env.CLIENT_URL}"> Start with Quizee  </a>
+                 href="${process.env.CLIENT_URL}"> Start </a>
      
              </div>`,
                 }

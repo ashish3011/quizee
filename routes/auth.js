@@ -11,7 +11,6 @@ router.post('/signin',signin);
 router.get('/signout', signout);
 router.put('/forgotpassword', forgotpassword);
  router.put('/reset',requireSignin, reset);
- router.post('/google-signin', googlesignin);
 
  router.put('/update-profile', requireSignin,updateProfile);
  router.put('/update-password', requireSignin,updatePassword);
