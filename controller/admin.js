@@ -10,7 +10,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 exports.allAdmin = (req, res) => {
     User.find({role:'0'})
-    .then(users => {
+    .then(users => { 
         if(!users){
             return res.status(400).json({error: 'No admin found'})
         }

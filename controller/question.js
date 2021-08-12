@@ -48,20 +48,45 @@ exports.deleteQuestion=(req,res)=>{
 exports.addQuestions = (req, res) => {
     const {id, questions} = req.body
     let newQuestion=questions
+    try{
     for(let i=0; i<questions.length; i++) {
-        let question=questions[i].Question;
-        let option1=questions[i].Option1;
-        let option2=questions[i].Option2;
-        let option3=questions[i].Option3;
-        let option4=questions[i].Option4;
-        let answer=questions[i].Answer;
+        if(questions[i].Question)
+        var question=questions[i].Question;
+        else
+        return res.status(401).json({error:"Something went wrong, try again"})
+        if(questions[i].Option1)
+        var option1=questions[i].Option1;
+        else
+        return res.status(401).json({error:"Something went wrong, try again"})
+        if(questions[i].Option2)
+        var option2=questions[i].Option2;
+        else
+        return res.status(401).json({error:"Something went wrong, try again"})
+        if(questions[i].Option3)
+        var option3=questions[i].Option3;
+        else
+        return res.status(401).json({error:"Something went wrong, try again"})
+        if(questions[i].Option4)
+        var option4=questions[i].Option4;
+        else
+        return res.status(401).json({error:"Something went wrong, try again"})
+        if(questions[i].Answer)
+        var answer=questions[i].Answer;
+        else
+        return res.status(401).json({error:"Something went wrong, try again"})
+
         let que=new Question({question,option1,option2,option3,option4,answer,quiz:id})
         que.save((err,q)=>{
         if(err){
             return res.status(401).json({error:"Something went wrong, try again"})
         }
         
-    })
+    }
+    )
+    }
+    }
+    catch(err1){
+        return res.status(401).json({error:"File format error, try again"}) 
     }
     return res.status(200).json({message:`Question created.`});
 }
